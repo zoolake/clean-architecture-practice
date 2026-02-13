@@ -13,11 +13,13 @@ public class SendMoneyService implements SendMoneyUseCase {
 
     @Override
     public void sendMoney(Account source, Account target, int amount) {
-        System.out.println(String.format("[거래시작] 출금계좌ID:%d --> 금액:%d --> 입금계좌ID:%d", source.getAccountId(), amount, target.getAccountId()));
+        System.out.println(String.format("[application] *송금거래 이전* 출금계좌:%s --> 금액:%d --> 입금계좌:%s\n", source, amount, target));
+
         source.withdraw(amount);
         target.deposit(amount);
-
         updateAccountStatePort.updateAccountState(source);
         updateAccountStatePort.updateAccountState(target);
+
+        System.out.println(String.format("[application] *송금거래 이후* 출금계좌:%s / 입금계좌:%s\n", source, target));
     }
 }

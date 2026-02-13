@@ -15,12 +15,12 @@ public class Account {
         }
 
         balance -= amount;
-        System.out.println(String.format("계좌ID:%d / 출금액:%d / 출금 후 잔액:%d", accountId, amount, balance));
+        System.out.println(String.format("[domain] 계좌ID:%d / 출금액:%d / 출금 후 잔액:%d\n", accountId, amount, balance));
     }
 
     public void deposit(int amount) {
         balance += amount;
-        System.out.println(String.format("계좌ID:%d / 입금액:%d / 입금 후 잔액:%d", accountId, amount, balance));
+        System.out.println(String.format("[domain] 계좌ID:%d / 입금액:%d / 입금 후 잔액:%d\n", accountId, amount, balance));
     }
 
     public Long getAccountId() {
@@ -29,5 +29,13 @@ public class Account {
 
     public int getBalance() {
         return balance;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "accountId=" + accountId +
+                ", balance=" + balance +
+                '}';
     }
 }
