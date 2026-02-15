@@ -1,6 +1,8 @@
 package account.application.service;
 
+import account.application.port.in.SendMoneyCommand;
 import account.application.port.in.SendMoneyUseCase;
+import account.application.port.out.UpdateAccountStateCommand;
 import account.application.port.out.UpdateAccountStatePort;
 import account.domain.Account;
 
@@ -12,13 +14,17 @@ public class SendMoneyService implements SendMoneyUseCase {
     }
 
     @Override
-    public void sendMoney(Account source, Account target, int amount) {
-        System.out.println(String.format("[application] *송금거래 이전* 출금계좌:%s --> 금액:%d --> 입금계좌:%s\n", source, amount, target));
+    public void sendMoney(SendMoneyCommand command) {
+        Account source = new Account(command.getSourceAccountId(), command.getSourceAccountBalance());
+        Account target = new Account(command.getTargetAccountId(), command.getTargetAccountBalance());
 
-        source.withdraw(amount);
-        target.deposit(amount);
-        updateAccountStatePort.updateAccountState(source);
-        updateAccountStatePort.updateAccountState(target);
+        System.out.println(String.format("[application] *송금거래 이전* 출금계좌:%s --> 금액:%d --> 입금계좌:%s\n", source, command.getAmount(), target));
+
+        source.withdraw(command.getAmount());
+        target.deposit(command.getAmount());
+
+        updateAccountStatePort.updateAccountState(new UpdateAccountStateCommand(source.getAccountId(), source.getBalance()));
+        updateAccountStatePort.updateAccountState(new UpdateAccountStateCommand(target.getAccountId(), target.getBalance()));
 
         System.out.println(String.format("[application] *송금거래 이후* 출금계좌:%s / 입금계좌:%s\n", source, target));
     }

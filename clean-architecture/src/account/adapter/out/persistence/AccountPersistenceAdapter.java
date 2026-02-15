@@ -1,7 +1,7 @@
 package account.adapter.out.persistence;
 
+import account.application.port.out.UpdateAccountStateCommand;
 import account.application.port.out.UpdateAccountStatePort;
-import account.domain.Account;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -11,9 +11,9 @@ public class AccountPersistenceAdapter implements UpdateAccountStatePort {
     private static final Map<Long, AccountEntity> database = new HashMap<>();
 
     @Override
-    public void updateAccountState(Account account) {
-        Long accountId = account.getAccountId();
-        int balance = account.getBalance();
+    public void updateAccountState(UpdateAccountStateCommand command) {
+        Long accountId = command.getAccountId();
+        int balance = command.getBalance();
 
         if (database.containsKey(accountId)) {
             AccountEntity accountEntity = new AccountEntity(accountId, balance, LocalDateTime.now());
@@ -27,7 +27,5 @@ public class AccountPersistenceAdapter implements UpdateAccountStatePort {
         for (AccountEntity accountEntity : accountEntities) {
             database.put(accountEntity.getAccountId(), accountEntity);
         }
-
     }
-
 }
