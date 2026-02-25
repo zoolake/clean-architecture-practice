@@ -2,7 +2,6 @@ package account.application.service;
 
 import account.application.port.in.SendMoneyCommand;
 import account.application.port.in.SendMoneyUseCase;
-import account.application.port.out.UpdateAccountStateCommand;
 import account.application.port.out.UpdateAccountStatePort;
 import account.domain.Account;
 
@@ -23,8 +22,8 @@ public class SendMoneyService implements SendMoneyUseCase {
         source.withdraw(command.getAmount());
         target.deposit(command.getAmount());
 
-        updateAccountStatePort.updateAccountState(new UpdateAccountStateCommand(source.getAccountId(), source.getBalance()));
-        updateAccountStatePort.updateAccountState(new UpdateAccountStateCommand(target.getAccountId(), target.getBalance()));
+        updateAccountStatePort.updateAccountState(source);
+        updateAccountStatePort.updateAccountState(target);
 
         System.out.println(String.format("[application] *송금거래 이후* 출금계좌:%s / 입금계좌:%s\n", source, target));
     }
