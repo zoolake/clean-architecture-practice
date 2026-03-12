@@ -1,8 +1,8 @@
-package account.application.service;
+package no.account.application.service;
 
-import account.application.port.in.SendMoneyUseCase;
-import account.application.port.out.UpdateAccountStatePort;
-import account.domain.Account;
+import no.account.application.port.in.SendMoneyUseCase;
+import no.account.application.port.out.UpdateAccountStatePort;
+import no.account.domain.Account;
 
 public class SendMoneyService implements SendMoneyUseCase {
     private final UpdateAccountStatePort updateAccountStatePort;

@@ -1,9 +1,11 @@
-import account.adapter.in.web.AccountController;
-import account.adapter.out.persistence.AccountPersistenceAdapter;
-import account.application.port.in.SendMoneyUseCase;
-import account.application.port.out.UpdateAccountStatePort;
-import account.application.service.SendMoneyService;
-import account.domain.Account;
+package no;
+
+import no.account.adapter.in.web.AccountController;
+import no.account.adapter.out.persistence.AccountPersistenceAdapter;
+import no.account.application.port.in.SendMoneyUseCase;
+import no.account.application.port.out.UpdateAccountStatePort;
+import no.account.application.service.SendMoneyService;
+import no.account.domain.Account;
 
 public class Main {
     private static final Account source = new Account(1L, 3000);

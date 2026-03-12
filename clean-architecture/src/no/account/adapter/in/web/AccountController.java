@@ -1,7 +1,7 @@
-package account.adapter.in.web;
+package no.account.adapter.in.web;
 
-import account.application.port.in.SendMoneyUseCase;
-import account.domain.Account;
+import no.account.application.port.in.SendMoneyUseCase;
+import no.account.domain.Account;
 
 public class AccountController {
     private final SendMoneyUseCase sendMoneyUseCase;

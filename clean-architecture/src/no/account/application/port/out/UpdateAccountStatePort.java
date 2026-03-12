@@ -1,6 +1,6 @@
-package account.application.port.out;
+package no.account.application.port.out;
 
-import account.domain.Account;
+import no.account.domain.Account;
 
 public interface UpdateAccountStatePort {
     void updateAccountState(Account account);

@@ -1,4 +1,4 @@
-package account.domain;
+package no.account.domain;
 
 public class Account {
     private final Long accountId;

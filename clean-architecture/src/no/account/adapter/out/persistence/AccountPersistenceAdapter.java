@@ -1,7 +1,7 @@
-package account.adapter.out.persistence;
+package no.account.adapter.out.persistence;
 
-import account.application.port.out.UpdateAccountStatePort;
-import account.domain.Account;
+import no.account.application.port.out.UpdateAccountStatePort;
+import no.account.domain.Account;
 
 import java.util.HashMap;
 import java.util.Map;
