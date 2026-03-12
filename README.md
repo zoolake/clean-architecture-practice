@@ -6,7 +6,6 @@
 <br>
 
 > 각 전략을 적용하고 정리한 내용은 아래 링크를 참고
-* [1. 매핑하지 않기](./readme/no/README.md)
-* [2. 양방향 매핑](./readme/bidirectional/README.md)
-* [3. 완전 매핑](./readme/full/README.md)
-* [4. 단방향 매핑](./readme/unidirectional/README.md)
+* [양방향 매핑](./readme/bidirectional/README.md)
+* [완전 매핑](./readme/full/README.md)
+* [단방향 매핑](./readme/unidirectional/README.md)
