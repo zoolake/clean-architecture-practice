@@ -1,4 +1,4 @@
-package account.domain;
+package unidirectional.account.domain;
 
 public class Account implements AccountState {
     private final Long accountId;

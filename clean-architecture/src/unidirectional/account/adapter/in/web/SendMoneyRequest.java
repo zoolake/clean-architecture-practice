@@ -1,6 +1,4 @@
-package account.adapter.in.web;
-
-import account.domain.AccountState;
+package unidirectional.account.adapter.in.web;
 
 public class SendMoneyRequest {
     private final Long sourceAccountId;

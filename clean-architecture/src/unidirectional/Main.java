@@ -1,10 +1,12 @@
-import account.adapter.in.web.AccountController;
-import account.adapter.in.web.SendMoneyRequest;
-import account.adapter.out.persistence.AccountEntity;
-import account.adapter.out.persistence.AccountPersistenceAdapter;
-import account.application.port.in.SendMoneyUseCase;
-import account.application.port.out.UpdateAccountStatePort;
-import account.application.service.SendMoneyService;
+package unidirectional;
+
+import unidirectional.account.adapter.in.web.AccountController;
+import unidirectional.account.adapter.in.web.SendMoneyRequest;
+import unidirectional.account.adapter.out.persistence.AccountEntity;
+import unidirectional.account.adapter.out.persistence.AccountPersistenceAdapter;
+import unidirectional.account.application.port.in.SendMoneyUseCase;
+import unidirectional.account.application.port.out.UpdateAccountStatePort;
+import unidirectional.account.application.service.SendMoneyService;
 
 public class Main {
     private static final Long SOURCE_ACCOUNT_ID = 1L;

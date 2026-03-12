@@ -1,4 +1,4 @@
-package account.domain;
+package unidirectional.account.domain;
 
 public interface AccountState {
     Long getAccountId();
