@@ -1,5 +1,7 @@
 package account.adapter.in.web;
 
+import account.domain.AccountState;
+
 public class SendMoneyRequest {
     private final Long sourceAccountId;
     private final int sourceAccountBalance;
@@ -45,4 +47,5 @@ public class SendMoneyRequest {
                 ", amount=" + amount +
                 '}';
     }
+
 }

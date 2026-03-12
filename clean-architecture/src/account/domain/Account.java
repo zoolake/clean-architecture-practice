@@ -1,12 +1,16 @@
 package account.domain;
 
-public class Account {
+public class Account implements AccountState {
     private final Long accountId;
     private int balance;
 
-    public Account(Long accountId, int balance) {
+    Account(Long accountId, int balance) {
         this.accountId = accountId;
         this.balance = balance;
+    }
+
+    public static Account fromAccountState(AccountState state) {
+        return new Account(state.getAccountId(), state.getBalance());
     }
 
     public void withdraw(int amount) {
