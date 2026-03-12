@@ -1,0 +1,4 @@
+/clean-architecture/out
+/.idea
+/*.iml
+out
