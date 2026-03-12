@@ -1,4 +1,4 @@
-package full.account.domain;
+package bidirectional.account.domain;
 
 public class Account {
     private final Long accountId;

@@ -1,4 +1,4 @@
-package full.account.adapter.in.web;
+package bidirectional.account.adapter.in.web;
 
 public class SendMoneyRequest {
     private final Long sourceAccountId;

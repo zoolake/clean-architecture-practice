@@ -1,4 +1,4 @@
-package full.account.adapter.out.persistence;
+package bidirectional.account.adapter.out.persistence;
 
 import java.time.LocalDateTime;
 

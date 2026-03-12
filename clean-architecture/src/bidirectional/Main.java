@@ -1,12 +1,12 @@
-package full;
+package bidirectional;
 
-import full.account.adapter.in.web.AccountController;
-import full.account.adapter.in.web.SendMoneyRequest;
-import full.account.adapter.out.persistence.AccountEntity;
-import full.account.adapter.out.persistence.AccountPersistenceAdapter;
-import full.account.application.port.in.SendMoneyUseCase;
-import full.account.application.port.out.UpdateAccountStatePort;
-import full.account.application.service.SendMoneyService;
+import bidirectional.account.adapter.in.web.AccountController;
+import bidirectional.account.adapter.in.web.SendMoneyRequest;
+import bidirectional.account.adapter.out.persistence.AccountEntity;
+import bidirectional.account.adapter.out.persistence.AccountPersistenceAdapter;
+import bidirectional.account.application.port.in.SendMoneyUseCase;
+import bidirectional.account.application.port.out.UpdateAccountStatePort;
+import bidirectional.account.application.service.SendMoneyService;
 
 public class Main {
     private static final Long SOURCE_ACCOUNT_ID = 1L;

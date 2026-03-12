@@ -1,7 +1,7 @@
-package full.account.adapter.out.persistence;
+package bidirectional.account.adapter.out.persistence;
 
-import full.account.application.port.out.UpdateAccountStatePort;
-import full.account.domain.Account;
+import bidirectional.account.application.port.out.UpdateAccountStatePort;
+import bidirectional.account.domain.Account;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -27,5 +27,7 @@ public class AccountPersistenceAdapter implements UpdateAccountStatePort {
         for (AccountEntity accountEntity : accountEntities) {
             database.put(accountEntity.getAccountId(), accountEntity);
         }
+
     }
+
 }

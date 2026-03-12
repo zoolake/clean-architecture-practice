@@ -1,4 +1,4 @@
-package account.application.port.in;
+package full.account.application.port.in;
 
 public class SendMoneyCommand {
     private final Long sourceAccountId;
